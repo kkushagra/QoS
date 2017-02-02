@@ -13,7 +13,7 @@ test_video: MPEG Videos used for testing.
 
 ## System Test Topology 
 
-[![solarized dualmode](https://github.com/kkushagra/QoS/blob/master/topology.png)]
+![solarized dualmode](https://github.com/kkushagra/QoS/blob/master/topology.png)
 
 The dangling numbered text is IP address assigned to interfaces of nodes, where nodes can have multiple interfaces.
 
