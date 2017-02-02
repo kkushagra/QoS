@@ -20,6 +20,11 @@ The dangling numbered text is IP address assigned to interfaces of nodes, where 
 
 ![solarized dualmode](https://github.com/kkushagra/QoS/blob/master/moduleflow.png)
 
+## Testing Scenario
+####Configuration:
+The marking kernel module is loaded at edge router E1 and congestion is induced using a congestion induc
+
+
 ##Package Information
 ####config_scripts
 This folder contains all the scripts required for configuration.
