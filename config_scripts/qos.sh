@@ -54,8 +54,8 @@ start)
 	# Create an HTB parent queue
 	tc qdisc add dev ${DEV} root handle 1: htb default 30
 
-        # Create the classes in which the packets will be classified, with the appropiate
-        # bandwith assigned
+    # Create the classes in which the packets will be classified, with the appropiate
+    # bandwith assigned
 	tc class add dev ${DEV} parent 1: classid 1:10 htb rate ${MAX}kbit ceil ${MAX}kbit prio 1
 	tc class add dev ${DEV} parent 1: classid 1:20 htb rate ${MIN}kbit ceil ${MAX}kbit prio 2
 	tc class add dev ${DEV} parent 1: classid 1:30 htb rate ${MIN}kbit ceil ${MIN}kbit prio 3
@@ -65,9 +65,9 @@ start)
 	echo "Creating classifier filters..."
 
 	# Classify the marked pakets in the corresponding classes
-        # Unmarked packets will be classified in the default class (1:30)
+    
 	tc filter add dev ${DEV} parent 1: protocol ip prio 1 u32 match ip tos 0xb8 0xff flowid 1:10
-        tc filter add dev ${DEV} parent 1: protocol ip prio 2 u32 match ip tos 0x28 0xff flowid 1:20
+    tc filter add dev ${DEV} parent 1: protocol ip prio 2 u32 match ip tos 0x28 0xff flowid 1:20
 
 ;;
 stop)

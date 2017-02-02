@@ -115,33 +115,26 @@ static unsigned int main_hook(const struct nf_hook_ops *ops,
 	    rtp_ehl = rtp_pointer + (14 + (4*cc));
 	    ehl_size = (rtp_ehl[1] | rtp_ehl[0] << 8);
     }
-    //printk (KERN_ALERT "ehl check 0x%x ehl size %u\n", (rtp_pointer[0] & 0x10), ehl_size);
+    
     /* Check if RTP version is 2 */
     if((rtp_pointer[0] & 0xC0) != 0x80){
         return NF_ACCEPT;
     }
-    //printk(KERN_ALERT "rtp type 0x%x\n", ((rtp_pointer[0] & 0xC0)));
         
     /* Check if RTP payload is MPEG-1 or MPEG-2 */
     
-    //printk(KERN_ALERT "rtp_pointer[1] %x\n", rtp_pointer[1] & 0x7E); 
-    
     if((rtp_pointer[1] & 0x7E) == 0x20) {
 	    //Classification Logic
-	    //printk(KERN_ALERT "MPEG-1\n");
-            //mpeg_pointer = rtp_pointer + (12 + (4 * cc)) + (4 * ehl_size);
-            mpeg_pointer = rtp_pointer + (12 + (4 * cc));
+	    
+        mpeg_pointer = rtp_pointer + (12 + (4 * cc));
 	    mpeg_pointer = mpeg_pointer + 3;
-	    //Check whether the packet is I packet or not
-	    if((mpeg_pointer[0] & 0x07) < 3) {
-                    //printk (KERN_ALERT "tos field change\n");
-                    //printk (KERN_ALERT "Mpeg byte 3 0x%x\n", mpeg_pointer[0]);
-                    //printk (KERN_ALERT "Seq No. %u\n", ntohs(*(unsigned short *) &rtp_pointer[2]));
+	    
+        //Check whether the packet is I packet or not
+	    if((mpeg_pointer[0] & 0x07) < 3) {        
 		    iph->tos = 184;
-                    //printk (KERN_ALERT "TOS byte 0x%x\n", *((u8 *)((u8 *)iph + 1)));
 		    iph->check = 0;
-                    iph->check = ip_fast_csum((u8 *)iph, iph->ihl);
-                    printk (KERN_ALERT "checksum %x\n", iph->check);
+            iph->check = ip_fast_csum((u8 *)iph, iph->ihl);
+            printk (KERN_ALERT "checksum %x\n", iph->check);
 	    }
     }
 
