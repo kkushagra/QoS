@@ -1,16 +1,6 @@
 # QoS
 Quality of Service for MPEG Packets
 
-
-
-INSTALL : Installation instructions can be found in this file.
-
-config_scripts: Configuration Scripts required to configure the nodes.
-
-marking_module: Kernel Module which marks the video packet.
-
-test_video: MPEG Videos used for testing.
-
 ## System Test Topology 
 
 ![solarized dualmode](https://github.com/kkushagra/QoS/blob/master/topology.png)
@@ -29,6 +19,9 @@ The marking module contains the kernel module used for marking I packets.
 
 ###test_video
 There  are  two  test  MPEG  videos  that  are  provided  to  test system.
+
+###INSTALL
+Details on setting up the system test enviroment.
 
 ##Steps to stream video using VLC:
 
