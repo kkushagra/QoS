@@ -11,13 +11,11 @@ marking_module: Kernel Module which marks the video packet.
 
 test_video: MPEG Videos used for testing.
 
-## Topology.png : The topology (internetwork of nodes) on which the project is
-based on.
+## System Test Topology 
 
-.. image:: _static/topology.png
-	:width: 30%
-	:align: center
+[![solarized dualmode](https://github.com/kkushagra/QoS/blob/master/topology.png)]
 
+The dangling numbered text is IP address assigned to interfaces of nodes, where nodes can have multiple interfaces.
 
 ##Steps to stream video using VLC:
 
