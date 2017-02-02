@@ -17,6 +17,19 @@ test_video: MPEG Videos used for testing.
 
 The dangling numbered text is IP address assigned to interfaces of nodes, where nodes can have multiple interfaces.
 
+##Package Information
+###config_scripts
+This folder contains all the scripts required for configuration.
+<node>.sh scripts assign the IP address to each node, and install
+VLC  package. 
+<node_route>.sh  scripts  add  all  the  routes  and  enable forwarding. 
+
+###marking_module
+The marking module contains the kernel module used for marking I packets.
+
+###test_video
+There  are  two  test  MPEG  videos  that  are  provided  to  test system.
+
 ##Steps to stream video using VLC:
 
 ###Step 1: Start VLC to recieve stream at Client
