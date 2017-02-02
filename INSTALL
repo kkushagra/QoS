@@ -1,0 +1,55 @@
+#Installation instructions for the project
+
+Step 1: 
+Set up the topology according to the figure topology.png.
+
+Step 2: 
+Install VLC on Client, Server 1 & Server 2.
+
+Ubuntu: sudo apt-get install vlc
+
+Others refer to vlc website on how to install it.
+http://www.videolan.org/vlc/index.html.
+
+Step 3:
+Run configuration script in the given order:
+<node> is named according to the names mentioned in topology.png.
+<script> can be found in directory ~/config_scripts.
+
+Assign IP address to all nodes.
+
+<node> : <script>
+Server 1: s1.sh
+Server 2: s2.sh
+Edge 1: e1.sh
+Edge 2: e2.sh
+Core 1: core1.sh
+Core 2: core2.sh
+Edge 3: e3.sh
+Client: client.sh
+
+Assign routes to all nodes.
+
+<node> : <script>
+Server 1: s1_route.sh
+Server 2: s2_route.sh
+Edge 1: e1_route.sh
+Edge 2: e2_route.sh
+Core 1: core1_route.sh
+Core 2: core2_route.sh
+Edge 3: e3_route.sh
+Client: client_route.sh
+
+Add the QoS filters at Edge 3 by running the script qos.sh.
+
+Step 4:
+
+Build the kernel module by running "make" command inside the folder marking
+module. 
+
+Load the kernel module at Edge 1 using command:
+
+sudo insmod packet_classifier.ko
+
+Great! You have succesfully configured all the nodes. Head back to the
+README document to check instructions on how to stream video on vlc.
