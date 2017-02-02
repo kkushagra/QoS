@@ -8,19 +8,19 @@ Quality of Service for MPEG Packets
 The dangling numbered text is IP address assigned to interfaces of nodes, where nodes can have multiple interfaces.
 
 ##Package Information
-###config_scripts
+####config_scripts
 This folder contains all the scripts required for configuration.
-<node>.sh scripts assign the IP address to each node, and install
+\<node>.sh scripts assign the IP address to each node, and install
 VLC  package. 
-<node_route>.sh  scripts  add  all  the  routes  and  enable forwarding. 
+\<node_route>.sh  scripts  add  all  the  routes  and  enable forwarding. 
 
-###marking_module
+####marking_module
 The marking module contains the kernel module used for marking I packets.
 
-###test_video
+####test_video
 There  are  two  test  MPEG  videos  that  are  provided  to  test system.
 
-###INSTALL
+####INSTALL
 Details on setting up the system test enviroment.
 
 ##Steps to stream video using VLC:
