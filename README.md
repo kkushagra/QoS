@@ -16,6 +16,10 @@ The overall architecture of the system we plan to work on is shown in the figure
 
 The dangling numbered text is IP address assigned to interfaces of nodes, where nodes can have multiple interfaces.
 
+## Marking I-MPEG packets flow logic
+
+![solarized dualmode](https://github.com/kkushagra/QoS/blob/master/moduleflow.png)
+
 ##Package Information
 ####config_scripts
 This folder contains all the scripts required for configuration.
