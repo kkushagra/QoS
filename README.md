@@ -22,7 +22,7 @@ The dangling numbered text is IP address assigned to interfaces of nodes, where 
 
 ## Testing Scenario
 ####Configuration:
-The marking kernel module is loaded at edge router E1 and congestion is induced using a congestion induc
+The marking kernel module is loaded at edge router E1 and congestion is induced using a congestion inducing mechanism(iperf, packet generator etc.).
 
 
 ##Package Information
