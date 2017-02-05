@@ -14,7 +14,7 @@ The overall architecture of the system we plan to work on is shown in the figure
 
 ![solarized dualmode](https://github.com/kkushagra/QoS/blob/master/topology.png)
 
-The dangling numbered text is IP address assigned to interfaces of nodes, where nodes can have multiple interfaces.
+The dangling numbered texts are IP address assigned to an interface of a node, where a node can have multiple interfaces.
 
 ## Marking I-MPEG packets flow logic
 
