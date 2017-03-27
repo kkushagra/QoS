@@ -49,7 +49,7 @@ Details on setting up the system test enviroment.
 ````
 $ vlc rtp://@:<port_number_video>
 ````
-###Step 2: Start streaming at Server
+### Step 2: Start streaming at Server
 
 ````
 $ vlc -vvv <filename> --sout '#rtp{dst=<destination_node>,port-video=<port>, port-audio=<port>,sout=keep}'
