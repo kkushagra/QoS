@@ -1,5 +1,5 @@
 # QoS
-##Quality of Service for MPEG Packets
+## Quality of Service for MPEG Packets
 
 MPEG video frames contain 4 types of pictures, I, P, B and D. Loss of I and P pictures affect all other pictures within the same frame, causing more severe consequences than losing B or D picture packets. However, these priority levels of video picture packets are not known to the network forwarding engines.  If congestion happen at  the  routers  where  there  are  video  packets  being  forwarded,  they  will  not honor the importance of I picture packets and drop them with the same rule as with P and B picture packets.
 
@@ -21,29 +21,30 @@ The dangling numbered texts are IP address assigned to an interface of a node, w
 ![solarized dualmode](https://github.com/kkushagra/QoS/blob/master/moduleflow.png)
 
 ## Testing Scenario
-####Configuration:
+#### Configuration
 The marking kernel module is loaded at edge router E1 and congestion is induced using a congestion inducing mechanism(iperf, packet generator etc.).
 
 
-##Package Information
-####config_scripts
+## Package Information
+
+#### config_scripts
 This folder contains all the scripts required for configuration.
 \<node>.sh scripts assign the IP address to each node, and install
 VLC  package. 
 \<node_route>.sh  scripts  add  all  the  routes  and  enable forwarding. 
 
-####marking_module
+#### marking_module
 The marking module contains the kernel module used for marking I packets.
 
-####test_video
+#### test_video
 There  are  two  test  MPEG  videos  that  are  provided  to  test system.
 
-####INSTALL
+#### INSTALL
 Details on setting up the system test enviroment.
 
-##Steps to stream video using VLC:
+## Steps to stream video using VLC:
 
-###Step 1: Start VLC to recieve stream at Client
+### Step 1: Start VLC to recieve stream at Client
 
 ````
 $ vlc rtp://@:<port_number_video>
@@ -55,3 +56,8 @@ $ vlc -vvv <filename> --sout '#rtp{dst=<destination_node>,port-video=<port>, por
 ````
 
 Thats it! You should be seeing the video stream on the client.
+
+## Testing Video Quality 
+
+Use any tool which supports SNR (Signal to Noise Ratio) or PSNR metrics to measure video quality.
+For example, [MSU Video Quality Measurement Tool](http://compression.ru/video/quality_measure/video_measurement_tool.html)
